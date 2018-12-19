@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
 
 import Hello from '../components/Hello';
 import * as actions from '../actions/';
@@ -12,14 +11,10 @@ export function mapStateToProps({ enthusiasmLevel, languageName }: StoreState) {
   };
 }
 
-export function mapDispatchToProps(
-  dispatch: Dispatch<actions.EnthusiasmAction>
-) {
-  return {
-    onIncrement: () => dispatch(actions.incrementEnthusiasm()),
-    onDecrement: () => dispatch(actions.decrementEnthusiasm())
-  };
-}
+const mapDispatchToProps = {
+  onIncrement: actions.incrementEnthusiasm,
+  onDecrement: actions.decrementEnthusiasm
+};
 
 export default connect(
   mapStateToProps,
