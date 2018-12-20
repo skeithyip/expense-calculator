@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
-import { EnthusiasmAction } from './actions/index';
-import { enthusiasm } from './reducers/index';
-import { StoreState } from './types/index';
+import { Payload, ExpenseAction } from './actions/expenseActions';
+import { GenericStoreState } from './types/index';
+import { expenses } from './reducers/expenses';
 
 const composeEnhancers =
   typeof window === 'object' &&
@@ -11,8 +11,8 @@ const composeEnhancers =
     ? (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
     : compose;
 
-const store = createStore<StoreState, EnthusiasmAction, {}, {}>(
-  enthusiasm,
+const store = createStore<GenericStoreState<Payload>, ExpenseAction, {}, {}>(
+  expenses,
   undefined,
   composeEnhancers(applyMiddleware(thunk))
 );
@@ -20,7 +20,7 @@ const store = createStore<StoreState, EnthusiasmAction, {}, {}>(
 if ((module as any).hot) {
   // Enable Webpack hot module replacement for reducers
   (module as any).hot.accept('./reducers', () => {
-    store.replaceReducer(enthusiasm);
+    store.replaceReducer(expenses);
   });
 }
 

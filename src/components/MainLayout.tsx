@@ -6,10 +6,9 @@ import MoneyIcon from '@material-ui/icons/AttachMoneyOutlined';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles, createStyles } from '@material-ui/core/styles';
 import { Theme } from '@material-ui/core/styles/createMuiTheme';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
+
+import Expense from './Expense';
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -18,14 +17,6 @@ const styles = (theme: Theme) =>
     },
     icon: {
       marginRight: theme.spacing.unit * 2
-    },
-    root: {
-      flexGrow: 1
-    },
-    paper: {
-      padding: theme.spacing.unit * 2,
-      textAlign: 'center',
-      color: theme.palette.text.secondary
     },
     heroUnit: {
       backgroundColor: theme.palette.background.paper
@@ -40,8 +31,6 @@ const styles = (theme: Theme) =>
 type Props = {
   classes: {
     appBar: string;
-    root: string;
-    paper: string;
     icon: string;
     heroUnit: string;
     heroContent: string;
@@ -79,20 +68,8 @@ const MainLayout: React.FunctionComponent<Props> = ({ classes }) => (
           </Typography>
         </div>
       </div>
+      <Expense />
     </main>
-    <Divider variant="middle" />
-    <Grid container spacing={0}>
-      <Grid item xs={3}>
-        <Paper id="expensePanel" className={classes.paper}>
-          Insert expense here
-        </Paper>
-      </Grid>
-      <Grid item xs={9}>
-        <Paper id="contentPanel" className={classes.paper}>
-          Insert content here
-        </Paper>
-      </Grid>
-    </Grid>
   </React.Fragment>
 );
 
