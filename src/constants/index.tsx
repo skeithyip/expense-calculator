@@ -1,11 +1,3 @@
-// src/constants/index.tsx
-
-export const INCREMENT_ENTHUSIASM = 'INCREMENT_ENTHUSIASM';
-export type INCREMENT_ENTHUSIASM = typeof INCREMENT_ENTHUSIASM;
-
-export const DECREMENT_ENTHUSIASM = 'DECREMENT_ENTHUSIASM';
-export type DECREMENT_ENTHUSIASM = typeof DECREMENT_ENTHUSIASM;
-
 export const ADD_EXPENSE = 'ADD_EXPENSE';
 export type ADD_EXPENSE = typeof ADD_EXPENSE;
 
