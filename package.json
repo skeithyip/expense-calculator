@@ -11,7 +11,7 @@
     "@types/react": "16.7.17",
     "@types/react-dom": "16.0.11",
     "@types/uuid": "^3.4.4",
-    "immer": "^1.9.2",
+    "immer": "^8.0.1",
     "react": "16.7.0",
     "react-dom": "16.7.0",
     "react-number-format": "^4.0.5",
